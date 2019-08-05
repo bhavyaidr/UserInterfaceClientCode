@@ -1,0 +1,19 @@
+{{! template-lint-disable }}
+<div>
+ 	<h1 align="center">Login Page</h1>
+ 	<form id="testForm">
+ 	<div>
+ 		<span> Email Id: </span>
+ 		<span>
+   			{{input type="text" name="email" value=email}}
+   		</span>
+   	</div>
+   <div>
+   		<span> Phone Number: </span>
+	   <span>
+	   {{input type="text" name="phoneNo" value=phoneNumber}}
+	   </span>
+   </div>
+   <button type="button" {{action "doLogin"}}>LOGIN</button>
+</form>
+</div>                               
