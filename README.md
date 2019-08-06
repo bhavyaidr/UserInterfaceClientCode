@@ -1,57 +1,28 @@
-# my-app
-
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+# Galaxy-App
 
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+1. Git :- 
+2. Node.js :- v10.16.0
+3. Ember CLI :- 3.11
+4. Npm :- 6.9.0
+
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd my-app`
+* `git clone <repository-url>` this repository.
+* `cd Galaxy-App`
 * `npm install`
 
-## Running / Development
+## Running the Application
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+1. Clone the project.
+2. If Ember.js is setup properly in your system, then you can download all the required dependency.
+3. Start your Application by using below command<br />
+```ember s```
+4. After successfully building the application access ```http://localhost:4200/```
+ through your browser.
 
-### Code Generators
 
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Linting
-
-* `npm run lint:hbs`
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
