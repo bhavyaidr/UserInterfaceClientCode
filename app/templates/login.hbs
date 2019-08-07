@@ -3,17 +3,29 @@
  	<h1 align="center">Login Page</h1>
  	<form id="testForm">
  	<div>
- 		<span> Email Id: </span>
+ 		<span> Email or Phone : </span>
  		<span>
    			{{input type="text" name="email" value=email}}
    		</span>
    	</div>
+  
    <div>
-   		<span> Phone Number: </span>
-	   <span>
-	   {{input type="text" name="phoneNo" value=phoneNumber}}
-	   </span>
+         <span> Username: </span>
+      <span>
+      {{input type="text" name="userName" value=userName}}
+      </span>
    </div>
-   <button type="button" {{action "doLogin"}}>LOGIN</button>
+   <div>
+         <span> Password: </span>
+      <span>
+     {{input type="password" name="password" value=password}}
+           
+      </span>
+   </div>
+   <div>
+   <button type="button" {{action "doLogin"}}>Login</button>
+    <button type="button" {{action "doSignUp"}}>Sign Up</button>
+</div>
+   
 </form>
 </div>                               
