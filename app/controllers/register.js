@@ -6,6 +6,8 @@ export default Controller.extend({
 	surName:"",
 	mobileNo:"",
 	password:"",
+	emailId:"",
+
 
 
 	actions:{
@@ -44,6 +46,7 @@ var ftrUser = q.options[q.selectedIndex].value;
 							"lastName" :  this.get("surName"),
 							"mobileNumber" :  parseInt(this.get("mobileNo"), 10),
 							"password" : this.get("password"),
+							"emailId" : this.get("emailId"),
 							// "gender" : gender,
 							// "month": strUser,
 							// "year": ptrUser,
