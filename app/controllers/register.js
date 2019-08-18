@@ -41,13 +41,13 @@ var ftrUser = q.options[q.selectedIndex].value;
 		
 		
 		const dataRecord = {"firstName" :  this.get("firstName"),
-							"surName" :  this.get("surName"),
-							"mobileNo" :  this.get("mobileNo"),
+							"lastName" :  this.get("surName"),
+							"mobileNumber" :  parseInt(this.get("mobileNo"), 10),
 							"password" : this.get("password"),
-							"gender" : gender,
-							"month": strUser,
-							"year": ptrUser,
-							"date": ftrUser
+							// "gender" : gender,
+							// "month": strUser,
+							// "year": ptrUser,
+							// "date": ftrUser
 						   }
 
 const url = "http://35.154.7.11:9092"
