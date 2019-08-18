@@ -18,6 +18,8 @@ export default Controller.extend({
 
   // 			password: "test"
 		// });
+		
+
 		const self = this;
 		let gender="";
 		if(document.getElementById('rd1').checked) {
@@ -48,11 +50,11 @@ var ftrUser = q.options[q.selectedIndex].value;
 							"date": ftrUser
 						   }
 
-
+const url = "http://35.154.7.11:9092"
 		Ember.$.ajax
       	({
 	        type: "POST",
-	        url: "http://localhost:9092/users/20",
+	        url: url + "/users",
 	        contentType: "application/json;charset=utf-8",
 	        data: JSON.stringify(dataRecord),
 	        dataType: "json",
