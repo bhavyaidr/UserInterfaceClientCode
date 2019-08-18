@@ -1,0 +1,94 @@
+{{outlet}}
+{{! template-lint-disable }}
+<div>
+	<p>
+	 <h1>Create an Account</h1>
+	 Its free and always will be.
+  	</p>
+  	<div>
+ 	
+ 	<form id="testForm">
+ 	<div>
+ 		<span> First Name : </span>
+ 		<span>
+   			{{input type="text" name="firstName" value=firstName}}
+   		</span>
+   	</div>
+  
+   <div>
+         <span> Surname :</span>
+      <span>
+      {{input type="text" name="surName" value=surName}}
+      </span>
+   </div>
+   <div>
+         <span> Mobile number or email address : </span>
+      <span>
+      {{input type="text" name="mobileNo" value=mobileNo}}
+      </span>
+   </div>
+   <div>
+         <span> New Password : </span>
+      <span>
+     {{input type="password" name="password" value=password}}
+           
+      </span>
+   </div>
+   
+   <p>Gender :</p>
+   <div id="genderOptions">
+  {{input type="radio" id="rd1" name="gender" value=male}} Male
+  {{input type="radio" id="rd2" name="gender" value=female}} Female
+  {{input type="radio" id="rd3" name="gender" value=other}} Other<br>
+  </div> 
+  
+<div>
+<p>Birthday :</p>
+ <select id="dateList">
+  <option value="d1">1</option>
+  <option value="d2">2</option>
+  <option value="d3">3</option>
+  <option value="d4">4</option>
+  <option value="d5">5</option>
+  <option value="d6">6</option>
+  <option value="d7">7</option>
+  <option value="d8">8</option>
+  <option value="d9">9</option>
+  <option value="d10">10</option>
+  </select>
+
+ <select id="monthList">
+  <option value="january">January</option>
+  <option value="february">February</option>
+  <option value="march">March</option>
+  <option value="april">April</option>
+  <option value="may">May</option>
+  <option value="june">June</option>
+  <option value="july">July</option>
+  <option value="august">August</option>
+  <option value="september">September</option>
+  <option value="october">October</option>
+  <option value="november">November</option>
+  <option value="december">December</option>
+</select>
+
+<select id="yearList">
+  <option value="y1">1985</option>
+  <option value="y2">1986</option>
+  <option value="y3">1987</option>
+  <option value="y4">1988</option>
+  <option value="y5">1989</option>
+  <option value="y6">1990</option>
+  <option value="y7">1991</option>
+  <option value="y8">1992</option>
+  <option value="y9">1993</option>
+  <option value="y10">1994</option>
+  
+  </select>
+</div>
+   <div>
+  <button type="button" {{action "doRegister"}}>Register</button>
+  </div>
+ </form>
+</div>
+</div>
