@@ -35,6 +35,10 @@ export default Controller.extend({
 
   // 			password: "test"
 		// });
+        const currentTime = moment.unix("1565856526").format('dddd, MMMM Do, YYYY h:mm:ss A');
+		const selectedDatePickerTime = moment.utc(this.get("expiresAt"), "ddd MMMM Do YYYY h:mm:ss A").unix();
+
+
 		const self = this;
 		const dataRecord = {
 							"userName" :  this.get("userName"),
@@ -58,13 +62,23 @@ export default Controller.extend({
                             "people":this.get("people"),
                             "quotes":this.get("quotes"),
                             "event":this.get("event"),
-                            "relationship":this.get("relationship"),
-                            password: "test"
+                            "relationship":this.get("relationship")
 						   }
+
+var fileInput = document.getElementById('input');
+var file = fileInput.files[0];
+var formData = new FormData();
+formData.append('file', file);
+///formData.append('filetype',file.type)
+var xhr = new XMLHttpRequest();
+const url = "http://35.154.7.11:9092"
+  // Add any event handlers here...
+  xhr.open('POST',url + "/image/upload", true);
+  xhr.send(formData);
 		Ember.$.ajax
       	({
 	        type: "POST",
-	        url: "http://localhost:9092/users/20",
+	        url: url + "/users/20",
 	        contentType: "application/json;charset=utf-8",
 	        data: JSON.stringify(dataRecord),
 	        dataType: "json",
