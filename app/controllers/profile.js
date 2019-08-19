@@ -1,8 +1,8 @@
-import Controller from '@ember/controller';
-import Ember from 'ember';
+	import Controller from '@ember/controller';
+	import Ember from 'ember';
 
-export default Controller.extend({
-	userName:"",
+	export default Controller.extend({
+	userId:"",
 	address:"",
 	currentCity:"",
 	hometown:"",
@@ -20,32 +20,32 @@ export default Controller.extend({
 	music:"",
 	programmes:"",
 	team:"",
-    people:"",
-    quotes:"",
-    event:"",
-    relationship:"",
+	people:"",
+	quotes:"",
+	event:"",
+
 
 	actions:{
 		doCreate() {
 		// const userRecord=	this.store.createRecord('user', {
-  // 			email: this.get("email"),
-  // 			userName: this.get("userName"),
-  // 			password: this.get("password"),
+	// 			email: this.get("email"),
+	// 			userName: this.get("userName"),
+	// 			password: this.get("password"),
 
 
-  // 			password: "test"
+	// 			password: "test"
 		// });
-        const currentTime = moment.unix("1565856526").format('dddd, MMMM Do, YYYY h:mm:ss A');
-		const selectedDatePickerTime = moment.utc(this.get("expiresAt"), "ddd MMMM Do YYYY h:mm:ss A").unix();
+	//       const currentTime = moment.unix("1565856526").format('dddd, MMMM Do, YYYY h:mm:ss A');
+		// const selectedDatePickerTime = moment.utc(this.get("expiresAt"), "ddd MMMM Do YYYY h:mm:ss A").unix();
 
 
 		const self = this;
 		const dataRecord = {
-							"userName" :  this.get("userName"),
+							"userName" :  this.get("userId"),
 							"address":this.get("address"),
 	                        "currentCity":this.get("currentCity"),
 	                        "hometown":this.get("hometown"),
-                            "landmark":this.get("landmark"),
+	                        "landmark":this.get("landmark"),
 	                        "pincode":this.get("pincode"),
 	                        "educaton":this.get("educaton"),
 	                        "highSchool":this.get("highSchool"),
@@ -59,24 +59,23 @@ export default Controller.extend({
 	                        "music":this.get("music"),
 	                        "programmes":this.get("programmes"),
 	                        "team":this.get("team"),
-                            "people":this.get("people"),
-                            "quotes":this.get("quotes"),
-                            "event":this.get("event"),
-                            "relationship":this.get("relationship")
+	                        "people":this.get("people"),
+	                        "quotes":this.get("quotes"),
+	                        "event":this.get("event")
 						   }
 
-var fileInput = document.getElementById('input');
-var file = fileInput.files[0];
-var formData = new FormData();
-formData.append('file', file);
-///formData.append('filetype',file.type)
-var xhr = new XMLHttpRequest();
-const url = "http://35.154.7.11:9092"
-  // Add any event handlers here...
-  xhr.open('POST',url + "/image/upload", true);
-  xhr.send(formData);
+	var fileInput = document.getElementById('input');
+	var file = fileInput.files[0];
+	var formData = new FormData();
+	formData.append('file', file);
+	///formData.append('filetype',file.type)
+	var xhr = new XMLHttpRequest();
+	const url = "http://35.154.7.11:9092"
+	// Add any event handlers here...
+	xhr.open('POST',url + "/image/upload", true);
+	xhr.send(formData);
 		Ember.$.ajax
-      	({
+	  	({
 	        type: "POST",
 	        url: url + "/users/20",
 	        contentType: "application/json;charset=utf-8",
@@ -86,16 +85,16 @@ const url = "http://35.154.7.11:9092"
 	         self.set("test", true);
 	        },
 	        error: function(xhr, error){
-	            self.set("test", true);
+	           alert("error occured. Please try again")
 	        } 
 	        
-    	}) 
+		}) 
 
 
 		},
 		
 
 	}
-	
 
-});
+
+	});
