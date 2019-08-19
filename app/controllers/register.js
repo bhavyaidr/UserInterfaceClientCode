@@ -67,7 +67,7 @@
 		         self.transitionTo("profile");
 		        },
 		        error: function(xhr, error){
-		        	alert("error occured. Please try again")
+		        	self.transitionTo("profile");
 		           
 		        } 
 	    	}) 
