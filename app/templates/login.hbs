@@ -1,51 +1,37 @@
 {{! template-lint-disable }}
 <div>
- 	<h1 align="center">Login Page</h1>
- 	<form id="testForm">
- 	<div style="margin-bottom: 24px; margin-left: 30px;">
- 		<span> EmailId: </span>
- 		<span>
-   			{{input type="text" name="emailId" value=emailId}}
-   		</span>
-   	</div>
+	<h1 align="center">Login Page</h1>
+	<form id="testForm">
+	<div style="margin-bottom: 24px; margin-left: 30px;">
+		<span> EmailId: </span>
+		<span>
+			{{input type="text" name="emailId" value=emailId}}
+		</span>
+	</div>
 
-      <div style="margin-bottom: 24px; margin-left: 30px;">
-      <span> Mobile Number: </span>
-      <span>
-            {{input type="text" name="mobileNumber" value=mobileNumber}}
-         </span>
-      </div>
-  
    <div style="margin-bottom: 24px; margin-left: 30px;">
-         <span> User Id: </span>
-      <span>
-      {{input type="text" name="userId" value=userId}}
+   <span> Mobile Number: </span>
+   <span>
+         {{input type="text" name="mobileNumber" value=mobileNumber}}
       </span>
    </div>
-  <div style="margin-bottom: 24px; margin-left: 30px;">
-         <span> Password: </span>
-      <span>
-         {{input type="password" name="password" value=password}}     
-      </span>
-   </div>
-   <!-- <div style="margin-bottom: 24px; margin-left: 30px;">
-      <span>
-         <input type="file" id="input"/>
-      </span>
-   </div> -->
-  <!-- <div style="margin-bottom: 24px; margin-left: 30px;">
-     <span>
-         Select date of birth
-      </span>
-      <span>
-         {{bootstrap-datepicker value=expiresAt}}
-      </span>
-   </div> -->
-    
-   <div style="margin-bottom: 24px; margin-left: 30px;">
-   <button type="button" {{action "doLogin"}}>Login</button>
-    <button type="button" {{action "doSignUp"}}>Sign Up</button>
+
+<div style="margin-bottom: 24px; margin-left: 30px;">
+      <span> User Id: </span>
+   <span>
+   {{input type="text" name="userId" value=userId}}
+   </span>
 </div>
-   
+<div style="margin-bottom: 24px; margin-left: 30px;">
+      <span> Password: </span>
+   <span>
+      {{input type="password" name="password" value=password}}     
+   </span>
+</div>
+<div style="margin-bottom: 24px; margin-left: 30px;">
+<button type="button" {{action "doLogin"}}>Login</button>
+ <button type="button" {{action "doSignUp"}}>Sign Up</button>
+</div>
+
 </form>
 </div>                               
