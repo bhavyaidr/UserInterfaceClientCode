@@ -3,7 +3,7 @@ import Ember from 'ember';
 import moment from 'moment';
 
 export default Controller.extend({
-email:"",
+emailId:"",
 userId:"",
 password:"",
 mobileNumber:"",
@@ -12,20 +12,28 @@ actions:{
 	doLogin() {
 	
 	const self = this;
-	const dataRecord = {"email" :  this.get("email"),
+	const dataRecord = {"emailId" :  this.get("emailId"),
 						"userId" :  this.get("userId"),
 						"password" :  this.get("password"),
 						"mobileNumber" : this.get("mobileNumber"),
 					   }
-					   Ember.$.ajax
+	//let url = "http://localhost:9092/users/auth/password/blrdream?emailId=bhavya.gupta12@gmail.com";
+	let url = "http://localhost:9092/users/auth/password/" + this.get("password") + "?emailId=" + this.get("emailId") + "&mobileNumber=" + this.get("mobileNumber");
+	//url = url + this.get("password") + "?emailId=" + this.get("emailId")+ "&mobileNumber=" + this.get("mobileNumber");
+  	//let url = http//localhost:9092/users/auth/password/blrdream?emailId=bhavya.gupta12@gmail.com
+  	Ember.$.ajax
   	({
-        type: "POST",
-        url: "http://localhost:9092/users/20",
-        contentType: "application/json;charset=utf-8",
-        data: JSON.stringify(dataRecord),
-        dataType: "json",
+        type: "GET",
+        url: url,
         success: function(data) {
-         self.transitionToRoute("register");
+         if(data.statusCode == 200) {
+         	alert("Login suceessful. Please fill your profile details");
+         	self.transitionToRoute("profile");
+         }else {
+         	alert("Login unsuccessfull. Please register yourself");
+         	self.transitionToRoute("register");
+         }
+         
         },
         error: function(xhr, error){
         self.transitionToRoute("register");
@@ -36,7 +44,7 @@ actions:{
 
 	},
 	doSignUp() {
-this.transitionToRoute("register");	
+		this.transitionToRoute("register");	
 }
 
 }

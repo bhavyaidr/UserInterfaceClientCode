@@ -12,12 +12,15 @@ userId :"",
 
 
 actions:{
+
+    
 doRegister() {
 const dataRecord = {"firstName" :  this.get("firstName"),
 					"lastName" :  this.get("lastName"),
 					"mobileNumber" :  parseInt(this.get("mobileNumber"), 10),
 					"password" : this.get("password"),
 					"emailId" : this.get("emailId"),
+                    "userId": this.get("userId")
 					}
 
 const url = "http://localhost:9092";
@@ -31,15 +34,13 @@ Ember.$.ajax
     data: JSON.stringify(dataRecord),
     dataType: "json",
     success: function(data) {
-     self.transitionToRoute("profile");
+     if(data.statusCode == 200) {
+        self.transitionToRoute("profile");
+     }
     },
     error: function(xhr, error){
-    	self.transitionToRoute("profile");
-       
     } 
 }) 
-
-
 },
 
 
