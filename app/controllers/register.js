@@ -1,5 +1,6 @@
 import Controller from '@ember/controller';
 import Ember from 'ember';
+import config from '../config/environment';
 
 export default Controller.extend({
 firstName:"",
@@ -23,7 +24,7 @@ const dataRecord = {"firstName" :  this.get("firstName"),
                     "userId": this.get("userId")
 					}
 
-const url = "http://localhost:9092";
+const url = config.host;
 const self=this;
 
 Ember.$.ajax

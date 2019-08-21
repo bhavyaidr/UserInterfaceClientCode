@@ -1,6 +1,8 @@
 import Controller from '@ember/controller';
 import Ember from 'ember';
 import moment from 'moment';
+import config from '../config/environment';
+
 
 export default Controller.extend({
 emailId:"",
@@ -10,7 +12,7 @@ mobileNumber:"",
 
 actions:{
 	doLogin() {
-	
+	const env = config.host;
 	const self = this;
 	const dataRecord = {"emailId" :  this.get("emailId"),
 						"userId" :  this.get("userId"),
@@ -18,7 +20,8 @@ actions:{
 						"mobileNumber" : this.get("mobileNumber"),
 					   }
 	//let url = "http://localhost:9092/users/auth/password/blrdream?emailId=bhavya.gupta12@gmail.com";
-	let url = "http://localhost:9092/users/auth/password/" + this.get("password") + "?emailId=" + this.get("emailId") + "&mobileNumber=" + this.get("mobileNumber");
+	let url = config.host;
+    url = url + "/users/auth/password/" + this.get("password") + "?emailId=" + this.get("emailId") + "&mobileNumber=" + this.get("mobileNumber");
 	//url = url + this.get("password") + "?emailId=" + this.get("emailId")+ "&mobileNumber=" + this.get("mobileNumber");
   	//let url = http//localhost:9092/users/auth/password/blrdream?emailId=bhavya.gupta12@gmail.com
   	Ember.$.ajax

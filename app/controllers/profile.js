@@ -1,5 +1,6 @@
 import Controller from '@ember/controller';
 import Ember from 'ember';
+import config from '../config/environment';
 
 export default Controller.extend({
 userId:"",
@@ -60,15 +61,15 @@ formData.append('file', file);
 formData.append('type', file.type.substring(6,file.type.length));
 ///formData.append('filetype',file.type)
 var xhr = new XMLHttpRequest();
-const url = "http://localhost:9092/" 
+const url = config.host;
 // Add any event handlers here...
-const imageUploadURL = url + "image/upload/" + this.get("userId")
+const imageUploadURL = url + "/image/upload/" + this.get("userId")
 xhr.open('POST',imageUploadURL, true);
 xhr.send(formData);
 Ember.$.ajax
 	({
     type: "POST",
-    url: url + "usersprofile",
+    url: url + "/usersprofile",
     contentType: "application/json;charset=utf-8",
     data: JSON.stringify(dataRecord),
     dataType: "json",
