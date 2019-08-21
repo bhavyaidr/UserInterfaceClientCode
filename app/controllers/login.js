@@ -1,64 +1,53 @@
-	import Controller from '@ember/controller';
-	import Ember from 'ember';
-	import moment from 'moment';
+import Controller from '@ember/controller';
+import Ember from 'ember';
+import moment from 'moment';
 
-	export default Controller.extend({
-	email:"",
-	userId:"",
-	password:"",
-	mobileNumber:"",
+export default Controller.extend({
+emailId:"",
+userId:"",
+password:"",
+mobileNumber:"",
 
-	actions:{
-		doLogin() {
-		// const userRecord=	this.store.createRecord('user', {
-	// 			email: this.get("email"),
-	// 			userName: this.get("userName"),
-	// 			password: this.get("password"),
-
-
-	// 			password: "test"
-		// });
-		//const currentTime = moment.unix("1565856526").format('dddd, MMMM Do, YYYY h:mm:ss A');
-		// const selectedDatePickerTime = moment.utc(this.get("expiresAt"), "ddd MMMM Do YYYY h:mm:ss A").unix();
-		const self = this;
-		const dataRecord = {"email" :  this.get("email"),
-							"userId" :  this.get("userId"),
-							"password" :  this.get("password"),
-							"mobileNumber" : this.get("mobileNumber"),
-						   }
-
-	// 		var fileInput = document.getElementById('input');
-	// var file = fileInput.files[0];
-	// var formData = new FormData();
-	// formData.append('file', file);
-	// ///formData.append('filetype',file.type)
-	// var xhr = new XMLHttpRequest();
-	//   // Add any event handlers here...
-	//   xhr.open('POST',"http://localhost:9092/image/upload", true);
-	//   xhr.send(formData);
-		Ember.$.ajax
-	  	({
-	        type: "POST",
-	        url: "http://localhost:9092/users/20",
-	        contentType: "application/json;charset=utf-8",
-	        data: JSON.stringify(dataRecord),
-	        dataType: "json",
-	        success: function(data) {
-	         self.transitionTo("register");
-	        },
-	        error: function(xhr, error){
-	        self.transitionTo("register");
-	           
-	        } 
-		}) 
+actions:{
+	doLogin() {
+	
+	const self = this;
+	const dataRecord = {"emailId" :  this.get("emailId"),
+						"userId" :  this.get("userId"),
+						"password" :  this.get("password"),
+						"mobileNumber" : this.get("mobileNumber"),
+					   }
+	//let url = "http://localhost:9092/users/auth/password/blrdream?emailId=bhavya.gupta12@gmail.com";
+	let url = "http://localhost:9092/users/auth/password/" + this.get("password") + "?emailId=" + this.get("emailId") + "&mobileNumber=" + this.get("mobileNumber");
+	//url = url + this.get("password") + "?emailId=" + this.get("emailId")+ "&mobileNumber=" + this.get("mobileNumber");
+  	//let url = http//localhost:9092/users/auth/password/blrdream?emailId=bhavya.gupta12@gmail.com
+  	Ember.$.ajax
+  	({
+        type: "GET",
+        url: url,
+        success: function(data) {
+         if(data.statusCode == 200) {
+         	alert("Login suceessful. Please fill your profile details");
+         	self.transitionToRoute("profile");
+         }else {
+         	alert("Login unsuccessfull. Please register yourself");
+         	self.transitionToRoute("register");
+         }
+         
+        },
+        error: function(xhr, error){
+        self.transitionToRoute("register");
+           
+        } 
+	}) 
 
 
-		},
-		doSignUp() {
-	this.transitionToRoute("register");	
-	}
+	},
+	doSignUp() {
+		this.transitionToRoute("register");	
+}
 
-	}
+}
 
 
-	});
+});

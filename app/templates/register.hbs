@@ -1,81 +1,62 @@
-  {{outlet}}
-  {{! template-lint-disable }}
-  <div>
-  	<p>
-  	 <h1>Create an Account</h1>
-  	 Its free and always will be.
-    	</p>
-    	<div>
-   	
-   	<form id="testForm">
-    <div style="margin-bottom: 24px; margin-left: 30px;">
-           <span> UserId: </span>
-        <span>
-        {{input type="text" name="userId" value=userId}}
-        </span>
-    </div>
+{{outlet}}
+{{! template-lint-disable }}
+<div>
+	<p>
+	 <h1>Create an Account</h1>
+	 Its free and always will be.
+  	</p>
+  	<div>
+ 	
+ 	<form id="testForm">
+  <div style="margin-bottom: 24px; margin-left: 30px;">
+         <span> UserId: </span>
+      <span>
+      {{input type="text" name="userId" value=userId}}
+      </span>
+  </div>
 
-   	<div style="margin-bottom: 24px; margin-left: 30px;">
-   		<span> First Name : </span>
-   		<span>
-     			{{input type="text" name="firstName" value=firstName}}
-     		</span>
-    </div>
-    
-    <div style="margin-bottom: 24px; margin-left: 30px;">
-           <span> Lastname :</span>
-        <span>
-        {{input type="text" name="lastName" value=lastName}}
-        </span>
-    </div>
-
-    <div style="margin-bottom: 24px; margin-left: 30px;">
-           <span> Mobile number: </span>
-        <span>
-        {{input type="text" name="mobileNumber" value=mobileNumber}}
-        </span>
-    </div>
-
-    <div style="margin-bottom: 24px; margin-left: 30px;">
-           <span> EmailId: </span>
-        <span>
-        {{input type="text" name="emailId" value=emailId}}
-        </span>
-    </div>
-
-    <div style="margin-bottom: 24px; margin-left: 30px;">
-     
-           <span> New Password : </span>
-        <span>
-       {{input type="password" name="password" value=password}}
-             
-        </span>
-    </div>
-    <!--  
-  <div style="margin-top: : 24px; margin-left: 30px;">
-       <span>
-           Select date of birth :
-        </span>
-        <span>
-           {{bootstrap-datepicker value=expiresAt}}
-        </span>
-     </div> -->
-     
-
-    <!-- <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gender :</p>
-     <div style="margin-bottom: 24px; margin-left: 30px;"id="genderOptions">
-    {{input type="radio" id="rd1" name="gender" value=male}} Male
-    {{input type="radio" id="rd2" name="gender" value=female}} Female
-    {{input type="radio" id="rd3" name="gender" value=other}} Other<br>
-    </div>  -->
-
-
-    <div  style="margin-top: : 24px; margin-left: 30px;">
-    <button type="button" {{action "doRegister"}}>Register</button>
-    </div>
-
-
-  </form>
+ 	<div style="margin-bottom: 24px; margin-left: 30px;">
+ 		<span> First Name : </span>
+ 		<span>
+   			{{input type="text" name="firstName" value=firstName}}
+   		</span>
   </div>
   
+  <div style="margin-bottom: 24px; margin-left: 30px;">
+         <span> Lastname :</span>
+      <span>
+      {{input type="text" name="lastName" value=lastName}}
+      </span>
   </div>
+
+  <div style="margin-bottom: 24px; margin-left: 30px;">
+         <span> Mobile number: </span>
+      <span>
+      {{input type="text" name="mobileNumber" value=mobileNumber}}
+      </span>
+  </div>
+
+  <div style="margin-bottom: 24px; margin-left: 30px;">
+         <span> EmailId: </span>
+      <span>
+      {{input type="text" name="emailId" value=emailId}}
+      </span>
+  </div>
+
+  <div style="margin-bottom: 24px; margin-left: 30px;">
+   
+         <span> New Password : </span>
+      <span>
+     {{input type="password" name="password" value=password}}
+           
+      </span>
+  </div>
+  <div  style="margin-top: : 24px; margin-left: 30px;">
+  <button type="button" {{action "doRegister"}}>Register</button>
+  </div>
+
+
+</form>
+</div>
+
+</div>
